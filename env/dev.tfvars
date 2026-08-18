@@ -1,4 +1,4 @@
-rg_name     = "trial"
+rg_name     = "test"
 environment = "dev"
 location    = "centralus"
 bastion_sku = "Standard"
@@ -10,11 +10,6 @@ network = {
     vm = {
       name   = "snet-vm"
       prefix = "10.10.1.0/24"
-    }
-
-    bastion = {
-      name   = "AzureBastionSubnet"
-      prefix = "10.10.2.0/26"
     }
   }
 }
@@ -44,7 +39,7 @@ lb = {
 
 vmss = {
   sku            = "Standard_D2als_v7"
-  zones          = ["1", "2", "3"]
+  zones          = ["1"]
   admin_username = "azureadmin"
   upgrade_mode   = "Rolling"
 

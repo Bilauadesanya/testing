@@ -14,7 +14,6 @@ resource "azurerm_public_ip" "public_ip" {
   name                = each.value.name
   location            = var.location
   resource_group_name = azurerm_resource_group.test_rg.name
-
   allocation_method = "Static"
   sku               = "Standard"
 
@@ -22,7 +21,7 @@ resource "azurerm_public_ip" "public_ip" {
 }
 
 resource "azurerm_subnet" "subnet" {
-  for_each = var.network.subnets
+  for_each = local.subnets
 
   name                 = each.value.name
   resource_group_name  = azurerm_resource_group.test_rg.name

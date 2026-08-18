@@ -8,7 +8,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "vmss" {
   admin_username                  = "azureadmin"
   disable_password_authentication = true
   upgrade_mode                    = var.vmss.upgrade_mode
-  zone_balance                    = true
+  zone_balance                    = length(var.vmss.zones) > 1
   zones                           = var.vmss.zones
   health_probe_id                 = azurerm_lb_probe.lb_probe.id
   identity {
@@ -69,7 +69,6 @@ resource "azurerm_linux_virtual_machine_scale_set" "vmss" {
   )
 
   lifecycle {
-    prevent_destroy = true
     ignore_changes = [
       instances
     ]
