@@ -5,8 +5,8 @@
 
 
 # Terraform variable files if they contain secrets
-*.tfvars
-*.tfvars.json
+
+#*.tfvars.json
 
 # Crash logs
 crash.log

@@ -23,8 +23,8 @@ network = {
 tags = {
   Environment = "dev"
   ManagedBy   = "Terraform"
-  Project     = "HA-VMSS"
-  Application = "ScotiaTest"
+  Project     = "VMSS"
+  Application = "Test"
 }
 
 lb = {
